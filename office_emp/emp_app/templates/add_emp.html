@@ -2,77 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>Add Employee</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
-<body class="bg-light">
-<div class="container mt-5">
-    <!-- Header -->
-    <div class="text-center mb-4">
-        <h1 class="display-5 fw-bold">Add an Employee</h1>
-        <p class="text-muted">Fill out the form below to add a new employee to the system.</p>
-        <hr class="my-4">
-    </div>
+  <body>
+  <div class="container">
+          <h1>Add An Employee!</h1>
+      <hr>
 
-    <!-- Form Section -->
-    <div class="card shadow-lg">
-        <div class="card-body">
-            <form action="/add_emp" method="POST">
-                {% csrf_token %}
+<form action="/add_emp" method="post">
+    {% csrf_token %}
+    <label for="first_name">First Name</label><br>
+    <input type="text" id="first_name" name="first_name" value="{{ first_name }}"><br>
+    <label for="last_name">Last Name</label><br>
+    <input type="text" id="last_name" name = "last_name" value="{{ last_name }}"><br>
+    <label for="salary">Salary</label><br>
+    <input type="number" id="salary" name="salary" value="{{ salary }}"><br>
+    <label for="dept">Department</label><br>
+    <input type="number" id="dept" name="dept" value="{{ dept }}"><br>
+    <label for="role">Role</label><br>
+    <input type="number" id="role" name="role" value="{{ role }}"><br>
+    <label for="bonus">Bonus</label><br>
+    <input type="number" id="bonus" name="bonus" value="{{ bonus }}"><br>
+    <label for="phone">Phone Number</label><br>
+    <input type="number" id="phone" name="phone" value="{{ phone }}"><br>
+    <hr>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
 
-                <!-- First Name -->
-                <div class="mb-3">
-                    <label for="first_name" class="form-label">First Name</label>
-                    <input type="text" class="form-control" id="first_name" name="first_name" value="{{first_name}}" required>
-                </div>
+  </div>
 
-                <!-- Last Name -->
-                <div class="mb-3">
-                    <label for="last_name" class="form-label">Last Name</label>
-                    <input type="text" class="form-control" id="last_name" name="last_name" value="{{last_name}}" required>
-                </div>
+    <!-- Optional JavaScript; choose one of the two! -->
 
-                <!-- Salary -->
-                <div class="mb-3">
-                    <label for="salary" class="form-label">Salary</label>
-                    <input type="number" class="form-control" id="salary" name="salary" value="{{salary}}" required>
-                </div>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-                <!-- Department -->
-                <div class="mb-3">
-                    <label for="dept" class="form-label">Department ID</label>
-                    <input type="number" class="form-control" id="dept" name="dept" value="{{dept}}" required>
-                </div>
-
-                <!-- Role -->
-                <div class="mb-3">
-                    <label for="role" class="form-label">Role ID</label>
-                    <input type="number" class="form-control" id="role" name="role" value="{{role}}" required>
-                </div>
-
-                <!-- Bonus -->
-                <div class="mb-3">
-                    <label for="bonus" class="form-label">Bonus</label>
-                    <input type="number" class="form-control" id="bonus" name="bonus" value="{{bonus}}" required>
-                </div>
-
-                <!-- Phone -->
-                <div class="mb-3">
-                    <label for="phone" class="form-label">Phone Number</label>
-                    <input type="number" class="form-control" id="phone" name="phone" value="{{phone}}" required>
-                </div>
-
-                <!-- Submit Button -->
-                <div class="d-grid">
-                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-<!-- Optional JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-</body>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+  </body>
 </html>
